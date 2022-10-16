@@ -8,7 +8,8 @@ variable "vpc_cidr_block" {
 }
 
 variable "my_ip" {
-  default = "125.186.212.83/32"
+  # 자신의 ip 입력
+  default = "{your ip}/32"
 }
 
 variable "use_default" {
