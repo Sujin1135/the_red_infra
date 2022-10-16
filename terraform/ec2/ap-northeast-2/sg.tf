@@ -1,14 +1,14 @@
 resource "aws_security_group" "allow_the_red" {
   name        = "allow_the_red"
   description = "Allow The Red traffic"
-  vpc_id      = "${data.aws_vpc.vpc.id}"
+  vpc_id      = data.aws_vpc.vpc.id
 
   ingress {
     description      = "My IP"
     from_port 	     = 0
     to_port          = 0
     protocol         = -1
-    cidr_blocks      = ["${var.my_ip}"]
+    cidr_blocks      = [var.my_ip]
   }
 
   ingress {

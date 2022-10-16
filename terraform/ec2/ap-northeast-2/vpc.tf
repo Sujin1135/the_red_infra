@@ -10,19 +10,19 @@ data "aws_vpc" "default" {
 #}
 
 data "aws_subnet" "default" {
-  vpc_id            = "${data.aws_vpc.default.id}"
+  vpc_id            = data.aws_vpc.default.id
   default_for_az    = true
-  availability_zone = "${var.availability_zone}"
+  availability_zone = var.availability_zone
 }
 
 data "aws_subnet_ids" "all" {
-  vpc_id = "${data.aws_vpc.vpc.id}"
+  vpc_id = data.aws_vpc.vpc.id
 }
 
 data "aws_vpc" "vpc" {
-  id = "${data.aws_vpc.default.id}"
+  id = data.aws_vpc.default.id
 }
 
 data "aws_subnet" "subnet" {
-  id = "${data.aws_subnet.default.id}"
+  id = data.aws_subnet.default.id
 }

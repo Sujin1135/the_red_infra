@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "geoip_lb_target_group" {
   name     = "geoip-lb-tg"
   port     = 7002
   protocol = "HTTP"
-  vpc_id   = "${data.aws_vpc.default.id}"
+  vpc_id   = data.aws_vpc.default.id
 
 
   health_check {
